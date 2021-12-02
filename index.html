@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="generator.css">
+    	<style>
+
+        </style>
+    </head>
+  <body>
+
+
+<div class ="site-title">
+    <p> Victorian Floral Pattern Generator </p>
+</div>
+
+
+<!--------------------- (add image into dropdown list html solution from https://www.geeksforgeeks.org/how-to-add-image-into-dropdown-list-for-each-items,  mixed with drop down menu solution from w3schools--------------------------------------------------------------------------------->
+
+
+<div class= "whole-drop-down-menu">
+
+  <div class="dropdown">
+    <button class="dropbtn">Flowers
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+     
+      <a href="#">
+        <img src= "https://i.imgur.com/bSrr2lF.png"
+          width="250" height="100"></a>
+
+      <a href="#">
+        <img src= "https://i.imgur.com/wJpyeBk.png"
+          width="250" height="100"></a>
+
+      <a href="#">
+        <img src= "https://i.imgur.com/OZY11k8.png"
+          width="250" height="100"> </a>
+
+    </div>
+   </div>
+    
+   <div class="dropdown">
+    <button class="dropbtn">Garlands
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+
+        <a href="#">
+        <img src= "https://i.imgur.com/rTkAdMD.png"
+          width="250" height="100"></a>
+
+      <a href="#">
+        <img src= "https://i.imgur.com/cOXmd4o.png"
+          width="250" height="100"></a>
+
+      <a href="#">
+        <img src= "https://i.imgur.com/vftGiST.png"
+          width="250" height="100"> </a>
+
+    </div>
+    </div>
+    
+    <div class="dropdown"> 
+    <button class="dropbtn">Fruit
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+
+        <a href="#">
+        <img src= "https://i.imgur.com/ospBzME.png"
+          width="250" height="100"></a>
+
+      <a href="#">
+        <img src= "https://i.imgur.com/NAOvVIl.png"
+          width="250" height="100"></a>
+
+      <a href="#">
+        <img src= "https://i.imgur.com/aOvY2pF.png"
+          width="250" height="100"> </a>
+    </div>
+    </div>
+    
+  </div> 
+</div>
+
+</div>
+</div>
+
+
+<!------------------  option jquery ----------------------------------------------------------------------------------------------->
+
+    <div class= "paper" data-image="https://i.imgur.com/02X5SPc.png">AN IMAGE</div>
+
+    <div class= "paper" data-image="https://i.imgur.com/zqRWSRB.png">ANOTHER IMAGE</div>
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+  
+         <script>
+          let i= 0;
+         	$(."paper").click(function(){
+         		let imageURL = $(this).data("image");
+         		console.log(imageURL)
+         		$("<div class='layer' id= 'layer-'"+i+"></div")
+         		  .css({
+         		  	"background":"url("+imageURL+")"
+         	})
+            .appendTo("body")
+            console.log(i)
+            i++;
+
+            $(this).append("<input type='range' min='20' max='200' data-later="+i+" >")
+               .appendTo("body").change (function (){
+                alert($(this).val())
+         </script>
+
+
+
+  </body>
+</html>
